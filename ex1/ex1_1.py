@@ -132,3 +132,5 @@ a_candidates = get_candidates(a_collocations, b_collocations)
 b_candidates = get_candidates(b_collocations, a_collocations)
 print_data("TOP 5 SENSE A CANDIDATES", a_candidates.head(5))
 print_data("TOP 5 SENSE B CANDIDATES", b_candidates.head(5))
+
+# TODO: STEPS 4.2, 5 and 6 :)
