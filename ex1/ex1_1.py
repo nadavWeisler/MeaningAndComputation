@@ -56,21 +56,21 @@ def extract_sentences(path, word, collocations):
 
 
 def get_word_frequency(word, sense_sentences):
-	file = open("./corpus_ex1.freq_list", "r")
-	invalid_word = -1
-	for line in file:
-		line_data = line.split()
-		if line_data[0] == word.lower():
-			return line_data[1]
-	return invalid_word
-	# frequency = 0
-	# for row in sense_sentences.iterrows():
-	# 	sentence = row[1]["sentence"]
-	# 	words = sentence.split()
-	# 	for instance in words:
-	# 		if instance.lower() == word.lower():
-	# 			frequency += 1
-	# return frequency
+	# file = open("./corpus_ex1.freq_list", "r")
+	# invalid_word = -1
+	# for line in file:
+	# 	line_data = line.split()
+	# 	if line_data[0] == word.lower():
+	# 		return line_data[1]
+	# return invalid_word
+	frequency = 0
+	for row in sense_sentences.iterrows():
+		sentence = row[1]["sentence"]
+		words = sentence.split()
+		for instance in words:
+			if instance.lower() == word.lower():
+				frequency += 1
+	return frequency
 
 
 def classify_sense(sentence, word, window_size, collocations):
@@ -83,9 +83,9 @@ def classify_sense(sentence, word, window_size, collocations):
 		a_sense = False
 		b_sense = False
 		for index in range(1, window_size + 1):
-			if word_index - index >= 0:
+			if word_index - index >= 0 and len(words[word_index - index]) > 1:
 				found_words.append(words[word_index - index])
-			if word_index + index < len(words):
+			if word_index + index < len(words) and len(words[word_index + index]) > 1:
 				found_words.append(words[word_index + index])
 		for collocation in found_words:
 			collocation = collocation.lower()
