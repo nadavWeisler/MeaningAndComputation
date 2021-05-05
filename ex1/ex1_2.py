@@ -116,7 +116,11 @@ if __name__ == '__main__':
 
 # makes more sense:
 # treasure & gem more similar than treasure & stone -> Gem is consider treasure but stone is not
-#  controversy & disputation more similar than controversy & debate -> controversy & disputation are similar words, debate has different meaning.
+#  controversy & disputation more similar than controversy & debate -> controversy & disputation are similar words, debate has different semantic field.
 # hell & pit more similar than hell & stone -> Known prase is "pit of hell" and hell considered to be underground, stone is not something hell relative.
 # stone & pit more similar pit & muffin -> Pit can be fills with stone, but not with muffins (and its a shame)
 # muffin & gem more similar than muffin & hell -> Muffin is a gem, not hell.
+
+# We asked Gaya, Literature and Psychology student, which really like psycholinguistics (If you looking for researcher and so) and she agree with me
+# about all accept controversy & disputation VS controversy & debate. She think that debate is in the same semantic field and its looks strage that there is
+# any difference in the similarities
