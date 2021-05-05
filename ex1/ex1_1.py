@@ -3,8 +3,8 @@ import random
 import pandas as pd
 import math
 
-WORD = "left"
-SEED_COLLOCATIONS = {"A": ["to", "from"], "B": ["side", "hand"]}
+WORD = "rock"
+SEED_COLLOCATIONS = {"A": ["music", "band"], "B": ["climbing", "large"]}
 
 
 FREQUENCY_THRESHOLD = 2  # TODO: FIND OUT WHAT TO SET HERE, FOR NOW IT'S RANDOM
