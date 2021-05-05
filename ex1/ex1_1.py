@@ -7,8 +7,8 @@ WORD = "rock"
 SEED_COLLOCATIONS = {"A": ["music", "band"], "B": ["climbing", "large"]}
 
 
-FREQUENCY_THRESHOLD = 2  # TODO: FIND OUT WHAT TO SET HERE, FOR NOW IT'S RANDOM
-SCORE_THRESHOLD = 1  # TODO: FIND OUT WHAT TO SET HERE, FOR NOW IT'S RANDOM
+FREQUENCY_THRESHOLD = 2
+SCORE_THRESHOLD = 1
 
 raw_collocations = {"A": [], "B": []}
 
@@ -56,13 +56,6 @@ def extract_sentences(path, word, collocations):
 
 
 def get_word_frequency(word, sense_sentences):
-	# file = open("./corpus_ex1.freq_list", "r")
-	# invalid_word = -1
-	# for line in file:
-	# 	line_data = line.split()
-	# 	if line_data[0] == word.lower():
-	# 		return line_data[1]
-	# return invalid_word
 	frequency = 0
 	for row in sense_sentences.iterrows():
 		sentence = row[1]["sentence"]
