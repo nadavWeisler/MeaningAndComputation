@@ -38,17 +38,22 @@ words = pd.read_csv('./SimLex-999/SimLex-999.txt', delimiter='\t')
 pairs = list(zip(words['word1'], words['word2']))
 golden_sim = words['SimLex999']
 results = [[], [], [], []]
-corr_result = [[], [], [], []]
-
-for i in range(len(pairs)):
-    for index, model in enumerate(models):
+for j in range(len(models)):
+    for i in range(len(pairs)):
         try:
-            similarity = models[index].wv.similarity(pairs[i][0], pairs[i][1])
+            similarity = models[j].wv.similarity(pairs[i][0], pairs[i][1])
         except KeyError:
             similarity = 0
         finally:
-            results[index].append(similarity)
-            results[index].append(
-                sp.stats.spearmanr(similarity, golden_sim[i]))
+            results[j].append(similarity)
+print("done5")
 
-print(corr_result)
+cor_results = []
+golden_sim = words['SimLex999']
+for result in results:
+    sim_res = sp.stats.spearmanr(result, golden_sim)
+    cor_results.append(sim_res)
+
+f = open("corrFile.txt","w+")
+f.writelines(cor_results)
+print(cor_results)
