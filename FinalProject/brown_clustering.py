@@ -514,7 +514,7 @@ class BrownClustering:
         return top
 
     def train(self):
-
+        print("IN TRAIN")
         words = self.ranks(self.vocabulary)
         tops = words[0:self.m]
 
