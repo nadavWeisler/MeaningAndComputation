@@ -1,3 +1,5 @@
+#DEMO - https://github.com/yangyuan/brown-clustering/blob/master/tests/demo.py
+
 import datetime
 import math
 import numpy as np
@@ -89,7 +91,7 @@ class EnhancedClusteringHelper(ClusteringHelper):
     def get_clusters(self):
         return self.clusters.copy()
 
-    def get_cluster(self, i):
+    def get_single_cluster(self, i):
         return self.clusters[i].copy()
 
     def merge_clusters(self, i, j):
@@ -287,8 +289,7 @@ class RawClusteringHelper(ClusteringHelper):
 
     def compute_benefit(self):
         tmp = self.compute_average_mutual_information(self.clusters)
-
-
+        
         k = len(self.clusters)
 
         _benefit = np.zeros((k, k))
